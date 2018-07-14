@@ -1,16 +1,18 @@
 package my.entrypoint
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
 import org.springframework.boot.test.context.SpringBootTest
-
+import org.springframework.test.context.ContextConfiguration
+import org.testng.annotations.Test
 
 @SpringBootTest(properties = ["spring.profiles.active=it"], webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class EntrypointIT {
+@ContextConfiguration(initializers = [BaseTest.Companion.Initializer::class])
+class EntrypointIT : BaseTest() {
 
-    @Test
+    @Test(priority = 1)
     fun someIntegrationTest() {
-        assertThat(2).isEqualTo(1 + 1)
+        assertThat(2).isEqualTo(2)
     }
+
 
 }

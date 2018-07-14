@@ -38,6 +38,7 @@ subprojects {
 
             integration_test: [
                     "org.testng:testng:$testngVersion",
+                    "org.springframework.boot:spring-boot-starter-web:$springbootVersion",
             ],
 
             spring_boot     : [
