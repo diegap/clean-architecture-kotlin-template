@@ -1,0 +1,13 @@
+description = "Configuration layer"
+
+jar {
+    baseName = 'clean-template'
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile project(":application:domain")
+    compile project(":application:infrastructure:dataprovider")
+    compile project(":application:infrastructure:entrypoint")
+}

@@ -1,0 +1,22 @@
+description = "Provides data from databases, endpoints, etc"
+
+test {
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    doFirst {
+        println ">>> dataprovider tests starting <<<"
+    }
+
+    doLast {
+        println ">>> dataprovider tests finishing <<<"
+    }
+}
+
+test.mustRunAfter(":application:infrastructure:entrypoint:test")
+
+dependencies {
+    compile project(":application:domain")
+}

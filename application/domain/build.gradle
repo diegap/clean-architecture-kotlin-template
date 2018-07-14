@@ -1,0 +1,21 @@
+description = "Entities and uses cases that implement the business logic"
+
+test {
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    doFirst {
+        println ">>> domain tests starting <<<"
+    }
+
+
+    doLast {
+        println ">>> domain tests finishing <<<"
+    }
+}
+
+dependencies {
+    testCompile libs.unit_test
+}

@@ -1,0 +1,13 @@
+spring:
+  config:
+    name: my-app
+
+logging:
+  level:
+    my:
+      app: debug
+
+my:
+  app:
+    property: "value"
+    another-property: "another-value"

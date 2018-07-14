@@ -1,0 +1,23 @@
+description = "Cron jobs and exposed endpoints"
+
+test {
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    doFirst {
+        println ">>> entrypoint tests starting <<<"
+    }
+
+    doLast {
+        println ">>> entrypoint tests finishing <<<"
+    }
+}
+
+test.mustRunAfter(":application:domain:test")
+
+dependencies {
+    compile project(":application:domain")
+    compile libs.spring_boot
+}
